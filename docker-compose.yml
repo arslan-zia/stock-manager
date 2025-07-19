@@ -1,8 +1,7 @@
-version: '3.8'
-
 services:
   app:
-    build: .
+    build:
+      context: .
     container_name: codeigniter-pos
     ports:
       - "8080:80"
@@ -11,10 +10,11 @@ services:
     depends_on:
       - db
     environment:
-      DB_HOST: db
-      DB_NAME: softianz-stock-manager
-      DB_USER: root
-      DB_PASS: root
+      - APP_BASE_URL=http://localhost:8080/
+      - DB_HOST=db
+      - DB_NAME=softianz-stock-manager
+      - DB_USER=root
+      - DB_PASS=root
 
   db:
     image: mysql:5.7

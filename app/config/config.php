@@ -18,7 +18,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'http://localhost/stock-manager/';
+$config['base_url'] = getenv('APP_BASE_URL') ?: 'http://localhost:8080/';
 
 /*
 |--------------------------------------------------------------------------
